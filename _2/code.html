@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - Helpful Companion</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dcc1af",
+                        "on-background": "#1a1c1c",
+                        "outline": "#897363",
+                        "on-tertiary-container": "#404040",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary-fixed": "#ffe089",
+                        "tertiary": "#5f5e5e",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-error-container": "#93000a",
+                        "sunny-yellow": "#FFD23F",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-container": "#643300",
+                        "secondary": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#914c00",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#edc22e",
+                        "inverse-surface": "#2f3131",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed": "#e4e2e1",
+                        "inverse-primary": "#ffb77e",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-container": "#ff8f1c",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#ffdcc3",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#564335",
+                        "on-primary-fixed": "#2f1500",
+                        "deep-ink": "#333333",
+                        "on-secondary-container": "#705900",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb77e",
+                        "surface-variant": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "paper-white": "#FFFFFF",
+                        "on-secondary": "#ffffff",
+                        "soft-gray": "#8E8E8E",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-container": "#adabab",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#914c00",
+                        "secondary-container": "#fcd03d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "stack-sm": "8px",
+                        "unit": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    },
+                    "borderWidth": {
+                        '3': '3px',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px #333333;
+        }
+        .neo-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #333333;
+        }
+        .neo-shadow-active:active {
+            transform: translate(4px, 4px) !important;
+            box-shadow: 0px 0px 0px 0px #333333 !important;
+        }
+        
+        /* Candy stripe progress bar */
+        .candy-stripe {
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px;
+            animation: stripe-move 2s linear infinite;
+        }
+        @keyframes stripe-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 0; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen w-screen overflow-hidden flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col h-screen py-stack-lg fixed left-0 top-0 w-64 border-r-3 border-deep-ink bg-sunny-yellow shadow-[4px_0px_0px_0px_rgba(51,51,51,1)] z-50">
+<!-- Header -->
+<div class="px-container-margin mb-stack-lg flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg border-3 border-deep-ink bg-paper-white flex items-center justify-center overflow-hidden neo-shadow">
+<span class="material-symbols-outlined text-deep-ink" style="font-variation-settings: 'FILL' 1;">palette</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-black text-deep-ink">The Studio</h1>
+<p class="text-label-md font-label-md text-deep-ink/70">Creative Mode</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex-1 flex flex-col gap-1 px-4 overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 hover:translate-x-[2px] active:scale-95 transition-all duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined">construction</span>
+                    Workbench
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container border-2 border-deep-ink shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] rounded-lg mx-2 my-1 p-3 font-label-lg active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+                    Projects
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 hover:translate-x-[2px] active:scale-95 transition-all duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                    Library
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 hover:translate-x-[2px] active:scale-95 transition-all duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Collaborators
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 hover:translate-x-[2px] active:scale-95 transition-all duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+                    History
+                </a>
+</li>
+</ul>
+<!-- Footer -->
+<div class="px-4 mt-auto flex flex-col gap-4 pt-4">
+<button class="w-full bg-paper-white text-deep-ink border-3 border-deep-ink rounded-xl py-3 font-label-lg neo-shadow neo-shadow-hover neo-shadow-active transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">star</span>
+                Upgrade Plan
+            </button>
+<ul class="flex flex-col gap-1 border-t-3 border-deep-ink pt-4">
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 hover:translate-x-[2px] active:scale-95 transition-all duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 hover:translate-x-[2px] active:scale-95 transition-all duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+                        Account
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-0 md:ml-64 flex flex-col h-screen w-full relative">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-container-margin h-20 bg-paper-white border-b-3 border-deep-ink shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] z-40 sticky top-0">
+<!-- Mobile Menu Toggle (Decorative for this demo) -->
+<button class="md:hidden w-10 h-10 border-3 border-deep-ink rounded-lg flex items-center justify-center bg-sunny-yellow neo-shadow neo-shadow-active transition-all mr-4">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Brand/Logo -->
+<div class="flex items-center gap-2 text-headline-md font-headline-md font-black text-deep-ink">
+                Helpful Companion
+            </div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-label-lg font-label-lg text-deep-ink hover:bg-sunny-yellow/10 hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-3 py-2 rounded-lg" href="#">Drafts</a>
+<a class="text-label-lg font-label-lg text-deep-ink hover:bg-sunny-yellow/10 hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-3 py-2 rounded-lg" href="#">Assets</a>
+<a class="text-label-lg font-label-lg text-deep-ink hover:bg-sunny-yellow/10 hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-3 py-2 rounded-lg" href="#">Community</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4 ml-auto lg:ml-0">
+<div class="hidden sm:flex gap-2">
+<button class="w-10 h-10 rounded-lg border-3 border-deep-ink flex items-center justify-center hover:bg-sunny-yellow/10 hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] transition-all bg-paper-white">
+<span class="material-symbols-outlined text-deep-ink">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-lg border-3 border-deep-ink flex items-center justify-center hover:bg-sunny-yellow/10 hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] transition-all bg-paper-white">
+<span class="material-symbols-outlined text-deep-ink">settings</span>
+</button>
+</div>
+<button class="hidden md:flex bg-primary-container text-on-primary-container border-3 border-deep-ink font-label-lg px-6 py-2.5 rounded-xl neo-shadow neo-shadow-hover neo-shadow-active transition-all items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                    New Project
+                </button>
+<!-- Avatar -->
+<div class="w-12 h-12 rounded-full border-3 border-deep-ink overflow-hidden neo-shadow bg-sunny-yellow">
+<img class="w-full h-full object-cover" data-alt="A close up avatar illustration of a friendly lion mascot with a bright orange mane, wearing large modern headphones, set against a solid yellow background in a playful neo-brutalist style with thick black outlines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD78wHADNWr5r54k_qNf3SFd0jQtZohfVH53xOd8PE1ZD9Q5NyvdK4AsAw90C_0Ry5Ytvt9IQkwVgo3ywF9V4AeHNyo5KSIsmf3Bbj7K1eGb_pAHjzYnnkkYYcdKf8oLWDXg5JudgJ6N9hWePALrD02k1QeD6v16WbmP4oQ9yD-7MsK4BcB8rpRTSjIcO5MpstresCIYQ3NK0nn4FF77LyG9qfW0mnldw6EY2JbW1KxDkHNKhajxOC_"/>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-container-margin pb-32">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-stack-lg">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container border-3 border-deep-ink neo-shadow flex items-center justify-center">
+<img alt="Helpful Lion Mascot" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsP-a3I7lHJINoorKCZcA0xi82zmprdHPcLgzfXJHUARbhCt2F0qDtqFAr2jz5gYpjWRuyCc0gHIjZotVSQY9L9YBh4DxoS7V0LX5LUGyLrLFjEbdNMIrT_jjueltBP-IjJ7uXhFciuWlwz6amU7ygn8xaek-LWp9dINPuqC2d9nDUUV8G1IzKypEtk3POMe6Ewo9yIi06806A8vDFplMSDEozilVAqFzN9fiOIUfkrLli0CL0CJr7m-zM"/>
+</div>
+<div>
+<h2 class="text-display-lg font-display-lg text-deep-ink">Projects Grid</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Manage and organize your creative workspace.</p>
+</div>
+</div>
+<!-- Filters/Search -->
+<div class="flex items-center gap-2">
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-deep-ink">search</span>
+<input class="w-full bg-paper-white border-3 border-deep-ink rounded-xl py-2 pl-10 pr-4 font-body-md text-deep-ink focus:outline-none focus:bg-sunny-yellow/10 focus:border-3 transition-colors placeholder:text-deep-ink/50 neo-shadow" placeholder="Search projects..." type="text"/>
+</div>
+<button class="h-[46px] w-[46px] flex items-center justify-center bg-paper-white border-3 border-deep-ink rounded-xl neo-shadow neo-shadow-hover neo-shadow-active transition-all">
+<span class="material-symbols-outlined text-deep-ink">tune</span>
+</button>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- New Project Card (Actionable) -->
+<button class="group h-[320px] bg-sunny-yellow border-3 border-deep-ink rounded-2xl p-6 flex flex-col items-center justify-center gap-4 neo-shadow neo-shadow-hover neo-shadow-active transition-all relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-10 transition-opacity"></div>
+<div class="w-20 h-20 bg-paper-white border-3 border-deep-ink rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-deep-ink">add</span>
+</div>
+<span class="text-headline-md font-headline-md text-deep-ink text-center">Create New<br/>Project</span>
+</button>
+<!-- Project Card 1 -->
+<div class="h-[320px] bg-paper-white border-3 border-deep-ink rounded-2xl flex flex-col overflow-hidden neo-shadow group hover:-translate-y-1 transition-transform">
+<!-- Thumbnail Area -->
+<div class="h-40 border-b-3 border-deep-ink relative bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-alt="A vibrant, playful illustration of a retro synthesizer keyboard sitting on a workbench, surrounded by colorful wires and glowing buttons. The scene is brightly lit with a warm orange and yellow neo-brutalist aesthetic, featuring thick black outlines." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9eDb5QEptVUHURe64JPZOAc8jKN8hHmVSFNDkkJtMq3RTKgc6IOUabcJy5aTMxVUVcYbyXpDsFrMicjDpNjRpJuu6bpzfXyy0wg6-24WZuwe6OXTL4zwKb-ce1Eoqqpw3_Ih9iw1ZL4WiRi_x0XiFDyhxwGebVL9KWhAw_VlRJwe3E2FkZamtQcCazxP4F_Sj5wrsI5H04Y1xeeel4glhjV9cCCWg5MaLWqFWjM-eqXk-H5_MgBwK')"></div>
+<div class="absolute top-3 right-3 bg-secondary-fixed text-on-secondary-fixed border-2 border-deep-ink px-2 py-1 rounded-md text-label-md font-label-md shadow-[2px_2px_0px_0px_rgba(51,51,51,1)]">
+                            In Progress
+                        </div>
+</div>
+<!-- Content Area -->
+<div class="p-4 flex-1 flex flex-col justify-between bg-paper-white">
+<div>
+<h3 class="text-headline-md font-headline-md text-deep-ink line-clamp-1">Synth Wave UI</h3>
+<p class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">update</span> Last edited 2h ago
+                            </p>
+</div>
+<div class="mt-4">
+<!-- Progress -->
+<div class="flex justify-between text-label-md font-label-md text-deep-ink mb-1">
+<span>Tasks</span>
+<span>75%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-high border-2 border-deep-ink rounded-full overflow-hidden">
+<div class="h-full bg-primary-container border-r-2 border-deep-ink candy-stripe w-[75%]"></div>
+</div>
+<!-- Bottom Row: Avatars & Action -->
+<div class="flex justify-between items-center mt-4">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-deep-ink object-cover bg-sunny-yellow relative z-30" data-alt="A small circular avatar showing a cartoonish dog with glasses, drawn with thick outlines and flat bright colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtj5n_EDTIUVGOV1zPJGl4ZrDHUtB1afA0o48tj-p7fDDua5H_y8CAFj_rRuYTo5Ku9GZrM4AbGR_i41nE6Melu1zJH5D5br3KAFQKRJ1-mDEPF4idUjEgiKgkGF8I5QLmh3u9_OlVDm_FaLJeyBzhXGW3q_a6S7Lz9KF9ZbHGxv6eY26FJpK5BLDM1MB_ZT0IyprmGc0V5wdJfBnAp0foctJDDLIExu_m5F6aRL1YmyaaRaV8Rz5p"/>
+<img class="w-8 h-8 rounded-full border-2 border-deep-ink object-cover bg-surface-variant relative z-20" data-alt="A small circular avatar showing a stylized robot head painted in a vibrant cyan blue, with a neo-brutalist thick border." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHNaONiefYa3HRx5mskzPXWbj00Mc4SmFOzRFJgSiMyWXrN97pFYrp-MKQRj4oox__IAqQLnvPkB6Ud7w6RdQCmZwKq8Z8j26ES3dh4JSypoliO7j_ZQcOJffM41FTCRpw1kCIuIcov4BdoRERxSX_G_awXoS65OTCM-EzfOv_GJu8EpjaGendKL0iq_IVg_50kapWWNM5tj-4xlmBdQQlUzU9nY8lShs3qy8PmsdH53Kq0QeTou9m"/>
+<div class="w-8 h-8 rounded-full border-2 border-deep-ink bg-paper-white flex items-center justify-center text-label-md font-bold text-deep-ink relative z-10">
+                                        +2
+                                    </div>
+</div>
+<button class="w-8 h-8 border-2 border-deep-ink rounded-md flex items-center justify-center hover:bg-sunny-yellow hover:shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] hover:-translate-y-[2px] hover:-translate-x-[2px] transition-all bg-surface">
+<span class="material-symbols-outlined text-[20px] text-deep-ink">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="h-[320px] bg-paper-white border-3 border-deep-ink rounded-2xl flex flex-col overflow-hidden neo-shadow group hover:-translate-y-1 transition-transform">
+<div class="h-40 border-b-3 border-deep-ink relative bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-alt="A digital art illustration of a 3D geometric shape resembling a crystal, floating in a clean minimal space. Rendered in a playful cartoon style with bright yellow and soft orange hues, framed by a thick black outline." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAc26g0pmhRD7E_TpL0-EMuhueLq4vxku1sOjrM0puzVFZpKVS_x5T0Rg35E9VwR1-f-h4lRKtN8PaV4SxT-WLPHx1FRJMpkjQlYLMOgHRVGD5p2fDC9RrUCOcQJmHyZwRbKiwrsSh-xt4NSwF6UV3wyvUwI2CDkyWFvDn7Pzl27MqbfKNq3PBA2keQ7lcimboEXgN4OFF6jSQXjRe4S1hIqvZkAugJ9fNzHpxXeDBaccu1hH9F_dH4')"></div>
+<div class="absolute top-3 right-3 bg-tertiary-fixed text-on-tertiary-fixed border-2 border-deep-ink px-2 py-1 rounded-md text-label-md font-label-md shadow-[2px_2px_0px_0px_rgba(51,51,51,1)]">
+                            Review
+                        </div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between bg-paper-white">
+<div>
+<h3 class="text-headline-md font-headline-md text-deep-ink line-clamp-1">Brand Assets 24</h3>
+<p class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">update</span> Last edited 1d ago
+                            </p>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-label-md font-label-md text-deep-ink mb-1">
+<span>Tasks</span>
+<span>90%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-high border-2 border-deep-ink rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container border-r-2 border-deep-ink candy-stripe w-[90%]"></div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-deep-ink object-cover bg-primary-fixed relative z-30" data-alt="A small circular avatar featuring a cartoonish cat face, designed in a playful vector style with flat colors and thick borders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuGuh3Ky6kd_Xfc9WFGfp1UKNz0UpuSbNFOr_Ggf3ffHgcPZnjwlwEOaxBqSgpGrlYI0LqCYbKkWiZMfDNVaTT4u_DAmXl6XYH9B52MEuWD_HO7U0UseQOHqVAPsoXNQrZau_TE34H3qVy5lnBvzZJKTuxj_WSg3_c1LcScigOWEO5Obdwvu2Lr44AcZkSiBr1uxCjHsv87TfUm6BHVspe-ALIg6NNYoEFifSmHNblUf2juCyqTVGp"/>
+</div>
+<button class="w-8 h-8 border-2 border-deep-ink rounded-md flex items-center justify-center hover:bg-sunny-yellow hover:shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] hover:-translate-y-[2px] hover:-translate-x-[2px] transition-all bg-surface">
+<span class="material-symbols-outlined text-[20px] text-deep-ink">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="h-[320px] bg-paper-white border-3 border-deep-ink rounded-2xl flex flex-col overflow-hidden neo-shadow group hover:-translate-y-1 transition-transform">
+<div class="h-40 border-b-3 border-deep-ink relative bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[64px] text-outline-variant">image_not_supported</span>
+<div class="absolute top-3 right-3 bg-surface-container-high text-deep-ink border-2 border-deep-ink px-2 py-1 rounded-md text-label-md font-label-md shadow-[2px_2px_0px_0px_rgba(51,51,51,1)]">
+                            Draft
+                        </div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between bg-paper-white">
+<div>
+<h3 class="text-headline-md font-headline-md text-deep-ink line-clamp-1">Client Presentation</h3>
+<p class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">update</span> Last edited 3d ago
+                            </p>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-label-md font-label-md text-deep-ink mb-1">
+<span>Tasks</span>
+<span>15%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-high border-2 border-deep-ink rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant border-r-2 border-deep-ink candy-stripe w-[15%]"></div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex -space-x-3">
+<!-- Empty Team -->
+<div class="w-8 h-8 rounded-full border-2 border-deep-ink border-dashed bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-deep-ink/50">person_add</span>
+</div>
+</div>
+<button class="w-8 h-8 border-2 border-deep-ink rounded-md flex items-center justify-center hover:bg-sunny-yellow hover:shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] hover:-translate-y-[2px] hover:-translate-x-[2px] transition-all bg-surface">
+<span class="material-symbols-outlined text-[20px] text-deep-ink">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

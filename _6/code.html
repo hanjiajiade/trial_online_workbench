@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workbench - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e2e2e2",
+                        "sunny-yellow": "#FFD23F",
+                        "secondary-container": "#fcd03d",
+                        "on-background": "#1a1c1c",
+                        "secondary-fixed": "#ffe089",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb77e",
+                        "outline": "#897363",
+                        "soft-gray": "#8E8E8E",
+                        "inverse-primary": "#ffb77e",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "tertiary": "#5f5e5e",
+                        "surface-container": "#eeeeee",
+                        "paper-white": "#FFFFFF",
+                        "on-error": "#ffffff",
+                        "secondary": "#745c00",
+                        "primary": "#914c00",
+                        "on-surface-variant": "#564335",
+                        "surface-tint": "#914c00",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#edc22e",
+                        "on-primary-container": "#643300",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdcc3",
+                        "tertiary-container": "#adabab",
+                        "on-tertiary-container": "#404040",
+                        "deep-ink": "#333333",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed": "#e4e2e1",
+                        "outline-variant": "#dcc1af",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#ff8f1c",
+                        "surface-container-low": "#f3f3f3",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-secondary-fixed": "#241a00",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#705900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-margin": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutal-btn {
+            @apply bg-primary-container text-deep-ink font-label-lg border-2 border-deep-ink rounded-lg shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100 flex items-center justify-center gap-unit p-stack-md;
+        }
+        .neo-brutal-card {
+            @apply bg-paper-white border-2 border-deep-ink rounded-xl shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] overflow-hidden;
+        }
+        .neo-brutal-input {
+            @apply w-full bg-paper-white border-2 border-deep-ink rounded-lg p-stack-md font-body-md focus:outline-none focus:border-3 focus:bg-[#fff9f0] transition-all;
+        }
+        .stripes {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(51,51,51,0.1) 10px, rgba(51,51,51,0.1) 20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-sunny-yellow selection:text-deep-ink min-h-screen flex flex-col pt-20 pb-24 relative overflow-x-hidden">
+<!-- Top App Bar (Mobile Version) -->
+<header class="fixed top-0 left-0 w-full h-20 bg-surface-bright border-b-3 border-deep-ink shadow-[0px_4px_0px_0px_rgba(51,51,51,1)] flex justify-between items-center px-container-margin z-50">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-lg-mobile font-extrabold text-primary">Helpful Companion</span>
+</div>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full border-2 border-deep-ink bg-sunny-yellow flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-deep-ink" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-deep-ink bg-primary-container flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+<img alt="Profile" class="w-full h-full object-cover rounded-full" data-alt="A small, stylized avatar of a cute, expressive anime lion with bright orange mane and big friendly eyes, set against a solid yellow background in a playful neo-brutalism art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByL6mJjewbNZ3t8TosAVNVvRRgaO62BYjjFa8GQ3Lt1poZc-5mxDpUTLlekg4PEOahQ0qfkcrCa_xK2_j9BRxIb0WQtvVgWp8aQylK76XOvUOCputv9HaCDKU1sFh8kMjdE5WZ0tgdREJYxt6xSI0QcCAggXNo75OqjFjMQ5cJXgem6uZj6LOYRPysQx_3lHtVteejm4mM0RekEohgJVGQ027uFes4L_DTpgDBrLDBRybirRKtMOlI"/>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[600px] mx-auto p-4 flex flex-col gap-8">
+<!-- Hero Welcome -->
+<section class="neo-brutal-card bg-[#fff5e6] mt-4 relative">
+<div class="p-6 flex flex-col gap-4 relative z-10">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-deep-ink">Hey there! 👋</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Ready to build something awesome today?</p>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-full border-3 border-deep-ink bg-sunny-yellow overflow-hidden shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] rotate-3">
+<img alt="Lion Mascot" class="w-full h-full object-cover" data-alt="A close-up, vibrant illustration of a cute anime lion mascot with a bright orange mane, giving a cheerful thumbs-up gesture. The art style is playful, high-contrast neo-brutalism with thick black outlines, set against a sunny yellow background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1usjeukGJA60-k6Qy9x57w7SwRYvG7CctT1rANhBv6PJUC9rWsynXmWEOFBZisNW6jDOQRplMLTi1hGXV8Lt0OpbsnxcFUWySBdc_HsEQQ628pm4Nc2Mawbw0E4q-oHsgqmlJ_B1mui4oTUHKCrFt11Ktp9GlgptIuJIFTDQz0m_4vJiSm2J0y9bVbfqFM17hu6sEzU_eK_eUcdVRlf0FNBeWBi1radiaCdem5ZYfUSIqO6xmpQpT"/>
+</div>
+</div>
+<div class="mt-2">
+<button class="neo-brutal-btn w-full">
+<span class="material-symbols-outlined font-bold">add_circle</span>
+                        New Project
+                    </button>
+</div>
+</div>
+<!-- Decorative corner -->
+<div class="absolute -bottom-4 -right-4 w-16 h-16 bg-primary-container rounded-full border-2 border-deep-ink opacity-50 blur-xl"></div>
+</section>
+<!-- Quick Stats Bento -->
+<section class="grid grid-cols-2 gap-4">
+<div class="neo-brutal-card bg-surface-container flex flex-col justify-between p-4 h-32 relative group active:scale-95 transition-transform">
+<div class="flex justify-between items-center w-full">
+<span class="font-label-lg text-label-lg text-deep-ink">Active Tasks</span>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">assignment</span>
+</div>
+<div class="font-display-lg text-headline-lg text-deep-ink">12</div>
+<div class="absolute bottom-0 left-0 w-full h-2 bg-sunny-yellow border-t-2 border-deep-ink"></div>
+</div>
+<div class="neo-brutal-card bg-surface-container flex flex-col justify-between p-4 h-32 relative group active:scale-95 transition-transform">
+<div class="flex justify-between items-center w-full">
+<span class="font-label-lg text-label-lg text-deep-ink">Messages</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</div>
+<div class="font-display-lg text-headline-lg text-deep-ink flex items-center gap-2">
+                    3
+                    <span class="w-3 h-3 rounded-full bg-error border-2 border-deep-ink animate-pulse"></span>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-2 bg-primary-container border-t-2 border-deep-ink"></div>
+</div>
+</section>
+<!-- Daily Progress -->
+<section class="neo-brutal-card">
+<div class="bg-sunny-yellow border-b-2 border-deep-ink p-4 flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-deep-ink flex items-center gap-2">
+<span class="material-symbols-outlined">electric_bolt</span>
+                    Daily Energy
+                </h2>
+<span class="font-label-lg text-label-lg bg-paper-white px-3 py-1 rounded-full border-2 border-deep-ink">65%</span>
+</div>
+<div class="p-4">
+<div class="w-full h-8 bg-surface-variant rounded-full border-2 border-deep-ink overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-primary-container border-r-2 border-deep-ink stripes w-[65%]"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 text-center">You're doing great! Keep the momentum going.</p>
+</div>
+</section>
+<!-- Recent Projects List -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-center px-1">
+<h2 class="font-headline-md text-headline-md text-deep-ink">Jump Back In</h2>
+<button class="font-label-lg text-label-lg text-primary underline decoration-2 underline-offset-4 active:text-deep-ink">View All</button>
+</div>
+<div class="neo-brutal-card bg-paper-white p-4 flex gap-4 items-center active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="w-14 h-14 rounded-lg border-2 border-deep-ink bg-[#cce3f5] shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-deep-ink text-3xl">brush</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-deep-ink line-clamp-1">Brand Identity Redesign</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Edited 2 hrs ago</p>
+</div>
+<span class="px-2 py-1 bg-sunny-yellow border-2 border-deep-ink rounded font-label-md text-label-md">Design</span>
+</div>
+<div class="neo-brutal-card bg-paper-white p-4 flex gap-4 items-center active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="w-14 h-14 rounded-lg border-2 border-deep-ink bg-[#f5d0cc] shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-deep-ink text-3xl">code</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-deep-ink line-clamp-1">Frontend Components V2</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Edited 5 hrs ago</p>
+</div>
+<span class="px-2 py-1 bg-[#ffb77e] border-2 border-deep-ink rounded font-label-md text-label-md">Code</span>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Version) -->
+<nav class="fixed bottom-0 left-0 w-full bg-paper-white border-t-3 border-deep-ink flex justify-around items-center p-3 z-50 md:hidden shadow-[0px_-4px_0px_0px_rgba(51,51,51,0.1)]">
+<!-- Active Tab: Home -->
+<a class="flex flex-col items-center gap-1 p-2 bg-secondary-container text-on-secondary-container border-2 border-deep-ink rounded-lg shadow-[2px_2px_0px_0px_rgba(51,51,51,1)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant active:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label-md text-label-md">Projects</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant active:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-md text-label-md">Tasks</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant active:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workbench - Tasks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dcc1af",
+                        "on-background": "#1a1c1c",
+                        "outline": "#897363",
+                        "on-tertiary-container": "#404040",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary-fixed": "#ffe089",
+                        "tertiary": "#5f5e5e",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-error-container": "#93000a",
+                        "sunny-yellow": "#FFD23F",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-container": "#643300",
+                        "secondary": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#914c00",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#edc22e",
+                        "inverse-surface": "#2f3131",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed": "#e4e2e1",
+                        "inverse-primary": "#ffb77e",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-container": "#ff8f1c",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#ffdcc3",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#564335",
+                        "on-primary-fixed": "#2f1500",
+                        "deep-ink": "#333333",
+                        "on-secondary-container": "#705900",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb77e",
+                        "surface-variant": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "paper-white": "#FFFFFF",
+                        "on-secondary": "#ffffff",
+                        "soft-gray": "#8E8E8E",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-container": "#adabab",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#914c00",
+                        "secondary-container": "#fcd03d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "stack-sm": "8px",
+                        "unit": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            overflow: hidden; /* Force 100vh layout */
+        }
+        
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(51, 51, 51, 1);
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px 0px rgba(51, 51, 51, 1);
+        }
+        .neo-border {
+            border: 3px solid #333333;
+        }
+        .neo-border-sm {
+            border: 2px solid #333333;
+        }
+        
+        .kanban-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: #333333 #f3f3f3;
+        }
+        .kanban-scroll::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .kanban-scroll::-webkit-scrollbar-track {
+            background: #f3f3f3;
+            border-left: 2px solid #333333;
+        }
+        .kanban-scroll::-webkit-scrollbar-thumb {
+            background-color: #333333;
+            border: 2px solid #333333;
+            border-radius: 4px;
+        }
+        
+        .mascot-bg {
+            position: absolute;
+            bottom: -5%;
+            right: -5%;
+            width: 400px;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="flex h-screen w-full bg-surface overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen py-stack-lg bg-sunny-yellow fixed left-0 top-0 w-64 border-r-3 border-deep-ink shadow-[4px_0px_0px_0px_rgba(51,51,51,1)] z-20">
+<div class="px-container-margin mb-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<img alt="The Studio Logo" class="w-8 h-8 neo-border-sm rounded bg-paper-white" data-alt="A small, stylized logo icon representing a creative studio, featuring bold black outlines and a vibrant orange center, drawn in a playful vector illustration style suitable for a modern light-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3TjY8fDn36H4kJMZ4yp2xTfJQoum9dUrSlQ3-2yCPnA-PaszSPZLJ6SXTA7aD6jR8V7-C6KOu13yPt2RxzJgPBwHc7_Kn3WWXDdE6XHU9r6XkxFlSBNlTo8Whb_OnORsBTMGoJTaSMAnYdlFsYZbnZfjnQ0UJWIDwoO1252Um8-JV368gfGt2AoijtVq5hIxyXf-F1MzG--SfAeJFZSvaOOUBF1UrspVV3iYy2Nc8a4C3ysv2I2d7"/>
+<h1 class="text-headline-md font-headline-md font-black text-deep-ink">The Studio</h1>
+</div>
+<p class="text-label-md font-label-md text-deep-ink opacity-80 uppercase tracking-wider">Creative Mode</p>
+</div>
+<div class="flex-1 px-2 overflow-y-auto">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 rounded-lg hover:translate-x-[2px] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">construction</span>
+                        Workbench
+                    </a>
+</li>
+<li>
+<!-- Active State for Workbench (Task intent) -->
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container border-2 border-deep-ink shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] rounded-lg mx-2 my-1 p-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+                        Projects
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 rounded-lg hover:translate-x-[2px] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                        Library
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 rounded-lg hover:translate-x-[2px] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">group</span>
+                        Collaborators
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-3 hover:bg-paper-white/20 rounded-lg hover:translate-x-[2px] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">history</span>
+                        History
+                    </a>
+</li>
+</ul>
+</div>
+<div class="px-container-margin mt-auto">
+<button class="w-full bg-primary-container text-deep-ink font-label-lg font-bold py-3 px-4 neo-border rounded-lg neo-shadow hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all mb-4">
+                Upgrade Plan
+            </button>
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-2 hover:bg-paper-white/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-deep-ink font-label-lg p-2 hover:bg-paper-white/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+                        Account
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-64 h-screen relative z-10">
+<img alt="Lion Mascot" class="mascot-bg" src="https://lh3.googleusercontent.com/aida/AP1WRLsP-a3I7lHJINoorKCZcA0xi82zmprdHPcLgzfXJHUARbhCt2F0qDtqFAr2jz5gYpjWRuyCc0gHIjZotVSQY9L9YBh4DxoS7V0LX5LUGyLrLFjEbdNMIrT_jjueltBP-IjJ7uXhFciuWlwz6amU7ygn8xaek-LWp9dINPuqC2d9nDUUV8G1IzKypEtk3POMe6Ewo9yIi06806A8vDFplMSDEozilVAqFzN9fiOIUfkrLli0CL0CJr7m-zM"/>
+<!-- Header -->
+<header class="h-20 flex justify-between items-center w-full px-container-margin border-b-3 border-deep-ink bg-paper-white shrink-0 shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-lg font-headline-lg font-black text-deep-ink">Project Alpha: Sprint 3</h2>
+<span class="bg-secondary-container neo-border-sm text-deep-ink font-label-md px-3 py-1 rounded-full">Active</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center neo-border rounded-lg bg-surface hover:bg-sunny-yellow/20 active:translate-y-[2px] active:translate-x-[2px] transition-all text-deep-ink">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center neo-border rounded-lg bg-surface hover:bg-sunny-yellow/20 active:translate-y-[2px] active:translate-x-[2px] transition-all text-deep-ink">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<button class="bg-primary-container text-deep-ink font-label-lg font-bold py-2 px-6 neo-border rounded-lg neo-shadow-sm hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                    New Task
+                </button>
+<img alt="Helpful Lion Avatar" class="w-12 h-12 rounded-full neo-border object-cover ml-2" data-alt="A cartoon avatar of a cheerful lion wearing headphones and a yellow hoodie, drawn in a thick-lined neo-brutalist style, suitable for a user profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaGu-bRxFj_gT-EiX1yZMKaB3mNDCXfVNseBsyiL2h83j9p42r1EHp4DmSgIYWmYtXJLsSki1RZzrWwVMt7mH-sRtQ8fupIHKJJQ9Sk64fP5UhTedGrvwYu3AOnZzAe1QAW_Gzw1Pdrw6lhl7dVKSEAUPwuuS_xWYOiNxrVpNtbkUPQltanYC1rw_7pMGPsJwJYwbOKHgGC6JlfNSFEzASDW9d0iG2wyj5pgji2DW9Z-ofCn1XansE"/>
+</div>
+</header>
+<!-- Kanban Board Area -->
+<div class="flex-1 p-container-margin overflow-x-auto overflow-y-hidden kanban-scroll relative z-10">
+<div class="flex gap-6 h-full min-w-max pb-4">
+<!-- Column: To-Do -->
+<div class="w-80 flex flex-col h-full">
+<div class="flex justify-between items-center mb-4 bg-surface-container-high neo-border rounded-lg p-3 neo-shadow-sm">
+<h3 class="text-headline-md font-headline-md text-deep-ink">To-Do</h3>
+<span class="bg-paper-white neo-border-sm rounded-full w-8 h-8 flex items-center justify-center text-label-md font-bold">3</span>
+</div>
+<div class="flex-1 overflow-y-auto kanban-scroll pr-2 flex flex-col gap-4">
+<!-- Card 1 -->
+<div class="bg-paper-white neo-border rounded-lg p-4 neo-shadow-sm hover:translate-y-[-2px] hover:shadow-[4px_6px_0px_0px_rgba(51,51,51,1)] transition-all cursor-grab active:cursor-grabbing">
+<div class="flex justify-between items-start mb-2">
+<div class="flex gap-2">
+<span class="bg-sunny-yellow neo-border-sm text-deep-ink text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Design</span>
+<span class="bg-primary-fixed neo-border-sm text-deep-ink text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">High Pri</span>
+</div>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-bold text-deep-ink mb-2">Create Illustration Assets</h4>
+<p class="text-label-md text-on-surface-variant mb-4 line-clamp-2">Need 5 new spot illustrations for the onboarding flow following the new neo-brutalist guidelines.</p>
+<div class="flex justify-between items-center pt-3 border-t-2 border-surface-variant">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+<span class="text-label-md">0/5</span>
+</div>
+<div class="flex -space-x-2">
+<img alt="Assignee" class="w-6 h-6 rounded-full neo-border-sm" data-alt="Small round avatar of a smiling cartoon cat in neo-brutalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqBskQZFZQkSc4HzcBj71s5hxZyG6mcm0z4IOuYZ6v-gg3zaeGwlIXSN-rAUAQxhTA9oaQAW-ZlYJ6TyIeSBZ3JKEOY-2QMo8gTwbWibeU2-t2YHrFHgZ8DoucpRvkxnzOfl13mTSD6myfZe3Cy_W7Suac9K3YvnjQ1wKv8R8D90hM6MK4HvuaqPFTZC0P-K60ZvkJLaVtf3alC8mJ-9uP9btn5jH5omco8POyei_juySdQKTIFBpb"/>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-paper-white neo-border rounded-lg p-4 neo-shadow-sm hover:translate-y-[-2px] hover:shadow-[4px_6px_0px_0px_rgba(51,51,51,1)] transition-all cursor-grab active:cursor-grabbing">
+<div class="flex justify-between items-start mb-2">
+<div class="flex gap-2">
+<span class="bg-surface-variant neo-border-sm text-deep-ink text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Tech Debt</span>
+</div>
+<span class="material-symbols-outlined text-tertiary">low_priority</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-bold text-deep-ink mb-2">Refactor Grid Component</h4>
+<div class="flex justify-between items-center pt-3 mt-4 border-t-2 border-surface-variant">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">chat_bubble</span>
+<span class="text-label-md">2</span>
+</div>
+<div class="flex -space-x-2">
+<img alt="Assignee" class="w-6 h-6 rounded-full neo-border-sm" data-alt="Small round avatar of a robotic dog in neo-brutalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_w-7BH6rkODceX1RAcEB_zdEcGUC-KHiK0zBm1pLHkcmkQ1DFyUKAFvVTAWvTAPsiMqF25JR09vKRnOcWahdz9Xo4JgPxyjVewDMAva6RwRIZMha0ntaiOU1HNrYYo6I-e2K14cZQyqw8ZmcsRYlGCPJuB6kAtQwh7XhOaiKRS2a5XRcluHxiNQ_sYOCMUf2rY9WoVMDfaVcrQE1KjzW9XjVpz6i6NoDm8s23mNyzqIwHCcytT6-3"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: In Progress -->
+<div class="w-80 flex flex-col h-full">
+<div class="flex justify-between items-center mb-4 bg-sunny-yellow/20 neo-border rounded-lg p-3 neo-shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">clock_loader_40</span>
+<h3 class="text-headline-md font-headline-md text-deep-ink">In Progress</h3>
+</div>
+<span class="bg-paper-white neo-border-sm rounded-full w-8 h-8 flex items-center justify-center text-label-md font-bold">2</span>
+</div>
+<div class="flex-1 overflow-y-auto kanban-scroll pr-2 flex flex-col gap-4">
+<!-- Card 3 -->
+<div class="bg-paper-white neo-border rounded-lg p-4 neo-shadow-[4px_4px_0px_0px_#FF8F1C] transition-all cursor-grab active:cursor-grabbing border-l-8 border-l-primary-container">
+<div class="flex justify-between items-start mb-2">
+<div class="flex gap-2">
+<span class="bg-[#B4E4FF] neo-border-sm text-deep-ink text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Frontend</span>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">keyboard_double_arrow_up</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-bold text-deep-ink mb-2">Implement Drag &amp; Drop</h4>
+<p class="text-label-md text-on-surface-variant mb-3">Add smooth sorting to the kanban columns.</p>
+<!-- Progress Bar -->
+<div class="w-full h-3 bg-surface-variant rounded-full neo-border-sm mb-3 overflow-hidden">
+<div class="h-full bg-primary-container w-[60%] border-r-2 border-deep-ink" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255,255,255,0.3) 5px, rgba(255,255,255,0.3) 10px);"></div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t-2 border-surface-variant">
+<div class="flex items-center gap-1 text-deep-ink font-bold">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+<span class="text-label-md">3/5</span>
+</div>
+<div class="flex -space-x-2">
+<img alt="Assignee" class="w-6 h-6 rounded-full neo-border-sm" data-alt="Small round avatar of a smiling cartoon cat in neo-brutalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGhVYrJVtFDcjN-nOHYMfkJIR8cg36nTdR0C1XfvPKdGhwBHQxz8Wu0K3nVUS2rhqXB7mad00LyXaBq5EW2emIuu5ifoSEAPfW-jz-cgtakNZK2agb2z-OKOAixCCUnWdAzl4ZUmeDw7RldCcRRc3pTO-6GlB7OnrcaNpOQ16nTbgaZALBhRbF-GW0DRjhhGsh62Cpkfci7CO_t6tgGvHuw_ZyocK_QFT0-PdupmWqXLtNmKVwjzjL"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Testing -->
+<div class="w-80 flex flex-col h-full">
+<div class="flex justify-between items-center mb-4 bg-surface-container-high neo-border rounded-lg p-3 neo-shadow-sm">
+<h3 class="text-headline-md font-headline-md text-deep-ink">Testing</h3>
+<span class="bg-paper-white neo-border-sm rounded-full w-8 h-8 flex items-center justify-center text-label-md font-bold">1</span>
+</div>
+<div class="flex-1 overflow-y-auto kanban-scroll pr-2 flex flex-col gap-4">
+<!-- Card 4 -->
+<div class="bg-paper-white neo-border rounded-lg p-4 neo-shadow-sm hover:translate-y-[-2px] hover:shadow-[4px_6px_0px_0px_rgba(51,51,51,1)] transition-all cursor-grab active:cursor-grabbing border-dashed">
+<div class="flex justify-between items-start mb-2">
+<div class="flex gap-2">
+<span class="bg-[#C8A2C8] neo-border-sm text-deep-ink text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">QA</span>
+</div>
+</div>
+<h4 class="text-body-lg font-body-lg font-bold text-deep-ink mb-2">User Settings Layout</h4>
+</div>
+</div>
+</div>
+<!-- Column: Done -->
+<div class="w-80 flex flex-col h-full">
+<div class="flex justify-between items-center mb-4 bg-surface-container-high neo-border rounded-lg p-3 opacity-70">
+<h3 class="text-headline-md font-headline-md text-deep-ink flex items-center gap-2">
+<span class="material-symbols-outlined">task_alt</span> Done
+                        </h3>
+</div>
+<div class="flex-1 overflow-y-auto kanban-scroll pr-2 flex flex-col gap-4">
+<!-- Card 5 -->
+<div class="bg-surface neo-border rounded-lg p-4 opacity-60">
+<h4 class="text-body-lg font-body-lg font-bold text-deep-ink line-through decoration-2">Setup Repository</h4>
+</div>
+</div>
+</div>
+<!-- Add Column Button -->
+<div class="w-16 flex flex-col h-full pt-[60px]">
+<button class="w-full h-12 flex items-center justify-center neo-border rounded-lg bg-surface hover:bg-sunny-yellow/20 text-deep-ink border-dashed">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

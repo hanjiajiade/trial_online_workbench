@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stitch_cartoon_style_online_workbench - 卡通工作台预览</title>
+  <meta name="description" content="卡通可爱风在线工作台多版本预览集合。包含任务管理、项目看板、日历、统计等页面原型。" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#f9f9f9",
+            "on-tertiary-container": "#404040",
+            "inverse-primary": "#ffb77e",
+            "on-tertiary-fixed-variant": "#474747",
+            "paper-white": "#FFFFFF",
+            "on-surface-variant": "#564335",
+            "on-primary-fixed-variant": "#6e3900",
+            "tertiary-fixed-dim": "#c8c6c6",
+            "soft-gray": "#8E8E8E",
+            "primary-container": "#ff8f1c",
+            "on-secondary-fixed-variant": "#574500",
+            "surface-dim": "#dadada",
+            "sunny-yellow": "#FFD23F",
+            "background": "#f9f9f9",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#1b1c1c",
+            "primary-fixed-dim": "#ffb77e",
+            "inverse-surface": "#2f3131",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#ffdcc3",
+            "inverse-on-surface": "#f1f1f1",
+            "surface": "#f9f9f9",
+            "outline-variant": "#dcc1af",
+            "surface-container-highest": "#e2e2e2",
+            "on-secondary-container": "#705900",
+            "deep-ink": "#333333",
+            "surface-variant": "#e2e2e2",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "on-secondary-fixed": "#241a00",
+            "on-primary-fixed": "#2f1500",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#adabab",
+            "secondary": "#745c00",
+            "secondary-fixed": "#ffe089",
+            "primary": "#914c00",
+            "tertiary-fixed": "#e4e2e1",
+            "surface-container": "#eeeeee",
+            "tertiary": "#5f5e5e",
+            "surface-container-high": "#e8e8e8",
+            "surface-tint": "#914c00",
+            "outline": "#897363",
+            "on-error-container": "#93000a",
+            "on-background": "#1a1c1c",
+            "surface-container-low": "#f3f3f3",
+            "secondary-container": "#fcd03d",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "16px",
+            unit: "8px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "container-margin": "24px",
+            "stack-lg": "32px"
+          },
+          fontFamily: {
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"]
+          },
+          fontSize: {
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "700" }],
+            "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .hard-shadow {
+      box-shadow: 4px 4px 0px 0px #333333;
+    }
+    .hard-shadow:hover {
+      box-shadow: 6px 6px 0px 0px #333333;
+    }
+    .active-press:active {
+      transform: translate(2px, 2px);
+      box-shadow: none;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #dadada;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+  <div class="min-h-screen flex flex-col">
+    <header class="w-full border-b-3 border-deep-ink bg-paper-white shadow-[0px_4px_0px_0px_rgba(51,51,51,1)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-3xl text-primary">palette</span>
+          <div>
+            <h1 class="font-display-lg text-headline-md font-black text-primary leading-tight">stitch_cartoon_style_online_workbench</h1>
+            <p class="font-label-md text-xs text-on-surface-variant">卡通可爱风在线工作台 · 多版本预览</p>
+          </div>
+        </div>
+        <a href="https://github.com/hanjiajiade/0624trial" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 hard-shadow font-bold text-sm hover:scale-105 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+          <span class="material-symbols-outlined text-lg">code</span>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        <section class="mb-8 sm:mb-10">
+          <div class="bg-primary-container border-3 border-deep-ink rounded-2xl p-5 sm:p-6 hard-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-6 h-full flex items-center opacity-10">
+              <span class="material-symbols-outlined text-[120px] text-deep-ink">hub</span>
+            </div>
+            <div class="relative z-10">
+              <h2 class="font-display-lg text-headline-lg text-white mb-2 drop-shadow-[2px_2px_0px_#333333]">欢迎来到卡通工作台预览集 🎨</h2>
+              <p class="font-body-md text-on-primary-container text-white max-w-2xl">
+                这里收录了多个静态页面原型，风格统一为高对比描边、温暖橙黄配色和圆润造型。你可以直接点开任意版本查看效果，也适合用来做 GitHub Pages 快速预览。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-2xl text-primary">view_carousel</span>
+            <h3 class="font-headline-md text-headline-md">页面版本</h3>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a href="_1/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="_1 预览" class="absolute inset-0 w-full h-full object-cover" src="_1/screen.png" />
+                <span class="absolute top-2 left-2 bg-sunny-yellow border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">v1</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">在线工作台 - 创意空间</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">综合首页：任务、项目、日历与统计一览。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+
+            <a href="_2/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="_2 预览" class="absolute inset-0 w-full h-full object-cover" src="_2/screen.png" />
+                <span class="absolute top-2 left-2 bg-sunny-yellow border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">v2</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">Projects - Helpful Companion</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">项目看板：项目卡片、进度和协作信息。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+
+            <a href="_3/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="_3 预览" class="absolute inset-0 w-full h-full object-cover" src="_3/screen.png" />
+                <span class="absolute top-2 left-2 bg-sunny-yellow border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">v3</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">Workbench - Tasks</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">任务管理：To-Do / In Progress / Testing 三栏。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+
+            <a href="_4/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="_4 预览" class="absolute inset-0 w-full h-full object-cover" src="_4/screen.png" />
+                <span class="absolute top-2 left-2 bg-sunny-yellow border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">v4</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">Helpful Companion - Calendar</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">创意日历：月视图与日程条目展示。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+
+            <a href="_5/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="_5 预览" class="absolute inset-0 w-full h-full object-cover" src="_5/screen.png" />
+                <span class="absolute top-2 left-2 bg-sunny-yellow border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">v5</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">Workbench - Helpful Companion</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">工作台统计：本周工时与完成情况。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+
+            <a href="_6/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="_6 预览" class="absolute inset-0 w-full h-full object-cover" src="_6/screen.png" />
+                <span class="absolute top-2 left-2 bg-sunny-yellow border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">v6</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">Workbench - Home</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">轻量首页：快速回到最近项目与任务。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-2xl text-primary">warning</span>
+            <h3 class="font-headline-md text-headline-md">其他</h3>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a href="404/code.html" class="group bg-paper-white border-3 border-deep-ink rounded-2xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex flex-col">
+              <div class="relative w-full pt-[56.25%] bg-surface-container overflow-hidden">
+                <img alt="404 预览" class="absolute inset-0 w-full h-full object-cover" src="404/screen.png" />
+                <span class="absolute top-2 left-2 bg-error-container border-2 border-deep-ink rounded px-1.5 py-0.5 font-bold text-[10px]">404</span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col">
+                <h4 class="font-headline-md text-sm font-bold mb-1 group-hover:text-primary transition-colors">404 - Page Not Found</h4>
+                <p class="font-body-md text-xs text-on-surface-variant mb-3">自定义错误页，用于找不到页面时的提示。</p>
+                <span class="mt-auto inline-flex items-center justify-center gap-1 bg-deep-ink text-white border-2 border-deep-ink rounded-lg px-3 py-1.5 font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  打开页面
+                </span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section class="border-t-3 border-deep-ink pt-6">
+          <div class="bg-surface-container-low border-2 border-deep-ink rounded-xl p-4">
+            <h3 class="font-headline-md text-headline-md mb-2">部署说明</h3>
+            <ol class="font-body-md text-sm text-on-surface-variant list-decimal list-inside space-y-1">
+              <li>将此仓库关联到 GitHub 后，在仓库 Settings → Pages 中选择部署来源。</li>
+              <li>若使用 <strong>GitHub Actions</strong>，可参考 <code class="bg-paper-white border border-deep-ink rounded px-1 py-0.5 text-xs">.github/workflows/pages.yml</code> 自动发布到 <code class="bg-paper-white border border-deep-ink rounded px-1 py-0.5 text-xs">gh-pages</code> 分支。</li>
+              <li>若使用 <strong>直接部署</strong>，可将 Pages 来源设为当前分支根目录，入口文件为 <code class="bg-paper-white border border-deep-ink rounded px-1 py-0.5 text-xs">index.html</code>。</li>
+              <li>所有页面均为静态 HTML，可直接在浏览器打开，无需构建。</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="border-t-3 border-deep-ink bg-paper-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <p class="font-label-md text-xs text-on-surface-variant">stitch_cartoon_style_online_workbench · 静态原型预览</p>
+        <a href="https://github.com/hanjiajiade/0624trial" target="_blank" rel="noopener" class="font-label-md text-xs text-primary font-bold hover:underline">GitHub Repository</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('button, a').forEach(el => {
+      el.addEventListener('mousedown', () => {
+        if (el.classList.contains('hard-shadow')) {
+          el.style.transform = 'translate(2px, 2px)';
+          el.style.boxShadow = 'none';
+        }
+      });
+      el.addEventListener('mouseup', () => {
+        if (el.classList.contains('hard-shadow')) {
+          el.style.transform = '';
+          el.style.boxShadow = '';
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        if (el.classList.contains('hard-shadow')) {
+          el.style.transform = '';
+          el.style.boxShadow = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

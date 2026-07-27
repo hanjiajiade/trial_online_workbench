@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>在线工作台 - 创意空间</title>
+<meta content="一个充满活力的卡通可爱风在线工作台，为您提供项目管理、任务追踪和创意日历功能。" name="description"/>
+<meta content="在线工作台 - 创意空间" property="og:title"/>
+<meta content="一个充满活力的卡通可爱风在线工作台，为您提供项目管理、任务追踪和创意日历功能。" property="og:description"/>
+<meta content="https://lh3.googleusercontent.com/aida/AP1WRLsP-a3I7lHJINoorKCZcA0xi82zmprdHPcLgzfXJHUARbhCt2F0qDtqFAr2jz5gYpjWRuyCc0gHIjZotVSQY9L9YBh4DxoS7V0LX5LUGyLrLFjEbdNMIrT_jjueltBP-IjJ7uXhFciuWlwz6amU7ygn8xaek-LWp9dINPuqC2d9nDUUV8G1IzKypEtk3POMe6Ewo9yIi06806A8vDFplMSDEozilVAqFzN9fiOIUfkrLli0CL0CJr7m-zM" property="og:image"/>
+<meta content="website" property="og:type"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-container": "#404040",
+                    "inverse-primary": "#ffb77e",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "paper-white": "#FFFFFF",
+                    "on-surface-variant": "#564335",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "soft-gray": "#8E8E8E",
+                    "primary-container": "#ff8f1c",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-dim": "#dadada",
+                    "sunny-yellow": "#FFD23F",
+                    "background": "#f9f9f9",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "primary-fixed-dim": "#ffb77e",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdcc3",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface": "#f9f9f9",
+                    "outline-variant": "#dcc1af",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-container": "#705900",
+                    "deep-ink": "#333333",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary-fixed": "#2f1500",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#adabab",
+                    "secondary-fixed-dim": "#edc22e",
+                    "on-primary-container": "#643300",
+                    "secondary": "#745c00",
+                    "secondary-fixed": "#ffe089",
+                    "primary": "#914c00",
+                    "tertiary-fixed": "#e4e2e1",
+                    "surface-container": "#eeeeee",
+                    "tertiary": "#5f5e5e",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-tint": "#914c00",
+                    "outline": "#897363",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1a1c1c",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-container": "#fcd03d",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "unit": "8px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "container-margin": "24px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #333333;
+        }
+        .hard-shadow:hover {
+            box-shadow: 6px 6px 0px 0px #333333;
+        }
+        .active-press:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dadada;
+            border-radius: 4px;
+        }
+        .candy-stripe {
+            background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+            background-size: 1rem 1rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-hidden h-screen flex">
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 z-40 w-56 border-r-3 border-deep-ink bg-paper-white dark:bg-inverse-surface shadow-[4px_0px_0px_0px_rgba(51,51,51,1)]">
+<div class="mb-4"><h1 class="font-display-lg text-3xl font-black text-primary dark:text-inverse-primary leading-tight">The Studio</h1><p class="font-label-md text-sm text-on-surface-variant">Creative Mode: ON</p></div>
+<nav class="flex flex-col gap-1 flex-1">
+<!-- Active: Home -->
+<a class="flex items-center gap-2 bg-secondary-container text-on-secondary-container border-2 border-deep-ink rounded-lg p-2 shadow-[2px_2px_0px_0px_rgba(51,51,51,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-100" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md text-sm">Home</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded-lg transition-all active:translate-x-0.5 active:translate-y-0.5 transition-all duration-100" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="folder_open">folder_open</span>
+<span class="font-label-md text-label-md text-sm">Projects</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded-lg transition-all active:translate-x-0.5 active:translate-y-0.5 transition-all duration-100" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md text-sm">Tasks</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded-lg transition-all active:translate-x-0.5 active:translate-y-0.5 transition-all duration-100" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md text-sm">Calendar</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded-lg transition-all active:translate-x-0.5 active:translate-y-0.5 transition-all duration-100" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="construction">construction</span>
+<span class="font-label-md text-label-md text-sm">Workbench</span>
+</a>
+<div class="mt-4">
+<button class="w-full bg-primary-container text-on-primary border-2 border-deep-ink rounded-lg py-2 px-3 hard-shadow font-bold text-sm flex items-center justify-center gap-1 hover:scale-105 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                    New Project
+                </button>
+</div>
+</nav>
+<div class="mt-auto pt-4 border-t-2 border-surface-container-highest">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<main class="ml-56 flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Top App Bar Shell -->
+<header class="w-full flex justify-between items-center px-6 shrink-0 h-16 border-b-3 border-deep-ink bg-surface-bright dark:bg-surface-dim shadow-[0px_4px_0px_0px_rgba(51,51,51,1)] z-30 relative">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-headline-md font-extrabold text-primary dark:text-inverse-primary text-3xl">Helpful Companion</span>
+</div>
+<div class="flex-1 max-w-xl mx-4">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-soft-gray text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 bg-paper-white border-2 border-deep-ink rounded-lg focus:outline-none focus:border-2 focus:bg-primary-fixed focus:shadow-none hard-shadow transition-all text-sm font-body-md" placeholder="Search for projects, tasks..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4"><div class="w-9 h-9 rounded-full border-2 border-deep-ink overflow-hidden hard-shadow bg-sunny-yellow"><img alt="Mascot" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsP-a3I7lHJINoorKCZcA0xi82zmprdHPcLgzfXJHUARbhCt2F0qDtqFAr2jz5gYpjWRuyCc0gHIjZotVSQY9L9YBh4DxoS7V0LX5LUGyLrLFjEbdNMIrT_jjueltBP-IjJ7uXhFciuWlwz6amU7ygn8xaek-LWp9dINPuqC2d9nDUUV8G1IzKypEtk3POMe6Ewo9yIi06806A8vDFplMSDEozilVAqFzN9fiOIUfkrLli0CL0CJr7m-zM"/></div>
+<button class="p-1.5 border-2 border-deep-ink rounded-lg hover:bg-primary-fixed-dim hover:scale-105 transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+</button>
+<div class="flex items-center gap-1.5 p-1.5 px-3 border-2 border-deep-ink rounded-lg bg-sunny-yellow hard-shadow">
+<span class="material-symbols-outlined text-xl" data-icon="account_circle">account_circle</span>
+<span class="font-label-md text-label-md hidden lg:block">Creative Mind</span>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-4 flex-1 flex flex-col gap-4 overflow-hidden relative z-20 bg-background">
+<!-- Hero Section -->
+<section class="relative bg-primary-container border-3 border-deep-ink rounded-2xl p-4 shrink-0 hard-shadow overflow-hidden flex items-center">
+<div class="absolute top-0 right-8 h-full flex items-center opacity-10"><img alt="Lion Mascot" class="w-24 h-24 object-cover rounded-xl border-2 border-deep-ink hard-shadow rotate-3" src="https://lh3.googleusercontent.com/aida/AP1WRLsP-a3I7lHJINoorKCZcA0xi82zmprdHPcLgzfXJHUARbhCt2F0qDtqFAr2jz5gYpjWRuyCc0gHIjZotVSQY9L9YBh4DxoS7V0LX5LUGyLrLFjEbdNMIrT_jjueltBP-IjJ7uXhFciuWlwz6amU7ygn8xaek-LWp9dINPuqC2d9nDUUV8G1IzKypEtk3POMe6Ewo9yIi06806A8vDFplMSDEozilVAqFzN9fiOIUfkrLli0CL0CJr7m-zM"/></div>
+<div class="relative z-10 w-full flex justify-between items-center">
+<div>
+<h2 class="font-display-lg text-headline-lg text-white mb-1 drop-shadow-[2px_2px_0px_#333333]">Welcome back, Creative Mind! 🚀</h2>
+<p class="font-body-md text-on-primary-container text-white">You have 4 tasks to finish today and 2 upcoming project milestones.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-sunny-yellow text-on-surface border-2 border-deep-ink px-4 py-1.5 rounded-lg font-bold text-sm hard-shadow hover:scale-105 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">Resume Last Project</button>
+<button class="bg-paper-white text-on-surface border-2 border-deep-ink px-4 py-1.5 rounded-lg font-bold text-sm hard-shadow hover:scale-105 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">View Schedule</button>
+</div>
+</div>
+</section>
+<!-- Grid Layout for Content -->
+<div class="grid grid-cols-12 gap-4 flex-1 min-h-0">
+<!-- Task Management Section (Bento Column) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-4 overflow-hidden h-full">
+<div class="flex flex-col flex-1 min-h-0">
+<div class="flex items-center justify-between mb-2 shrink-0">
+<h3 class="font-headline-md text-headline-md flex items-center gap-2 text-3xl">
+<span class="material-symbols-outlined text-primary">format_list_bulleted</span>
+                            Task Manager
+                        </h3>
+<div class="flex gap-2">
+<span class="bg-secondary-container px-2 py-0.5 border-2 border-deep-ink rounded-full text-xs font-bold">12 Active</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 flex-1 min-h-0">
+<!-- To-Do Column -->
+<div class="bg-surface-container-low border-2 border-deep-ink rounded-xl flex flex-col h-full overflow-hidden">
+<div class="bg-primary-fixed border-b-2 border-deep-ink p-2 shrink-0">
+<h4 class="font-label-md text-label-md flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-error rounded-full"></span>
+                                    To-Do
+                                </h4>
+</div>
+<div class="p-2 flex-1 overflow-y-auto custom-scrollbar space-y-2">
+<div class="bg-paper-white border-2 border-deep-ink p-2.5 rounded-lg hard-shadow group cursor-pointer hover:-translate-y-1 transition-all">
+<p class="font-body-md text-sm text-on-surface mb-2 leading-snug">Finalize moodboard for Studio X</p>
+<div class="flex justify-between items-center">
+<span class="bg-tertiary-fixed px-1.5 py-0.5 border-1 border-deep-ink rounded text-[9px] font-bold">DESIGN</span>
+<span class="material-symbols-outlined text-soft-gray text-xs">schedule</span>
+</div>
+</div>
+<div class="bg-paper-white border-2 border-deep-ink p-2.5 rounded-lg hard-shadow group cursor-pointer hover:-translate-y-1 transition-all">
+<p class="font-body-md text-sm text-on-surface mb-2 leading-snug">Order new neon signs</p>
+<div class="flex justify-between items-center">
+<span class="bg-sunny-yellow px-1.5 py-0.5 border-1 border-deep-ink rounded text-[9px] font-bold">SHOP</span>
+<span class="material-symbols-outlined text-soft-gray text-xs">attach_money</span>
+</div>
+</div>
+</div>
+</div>
+<!-- In Progress Column -->
+<div class="bg-surface-container-low border-2 border-deep-ink rounded-xl flex flex-col h-full overflow-hidden">
+<div class="bg-sunny-yellow border-b-2 border-deep-ink p-2 shrink-0">
+<h4 class="font-label-md text-label-md flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-secondary rounded-full"></span>
+                                    In Progress
+                                </h4>
+</div>
+<div class="p-2 flex-1 overflow-y-auto custom-scrollbar space-y-2">
+<div class="bg-paper-white border-2 border-deep-ink p-2.5 rounded-lg hard-shadow group cursor-pointer hover:-translate-y-1 transition-all">
+<p class="font-body-md text-sm text-on-surface mb-2 leading-snug">UI Component Library</p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-2 border-1 border-deep-ink overflow-hidden">
+<div class="bg-primary-container h-full candy-stripe" style="width: 65%"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="bg-primary-fixed px-1.5 py-0.5 border-1 border-deep-ink rounded text-[9px] font-bold">SYSTEM</span>
+<span class="material-symbols-outlined text-primary text-xs">sync</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Done Column -->
+<div class="bg-surface-container-low border-2 border-deep-ink rounded-xl flex flex-col h-full overflow-hidden">
+<div class="bg-secondary-container border-b-2 border-deep-ink p-2 shrink-0">
+<h4 class="font-label-md text-label-md flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+                                    Done
+                                </h4>
+</div>
+<div class="p-2 flex-1 overflow-y-auto custom-scrollbar space-y-2 opacity-75">
+<div class="bg-paper-white border-2 border-deep-ink p-2.5 rounded-lg hover:opacity-100 hover:-translate-y-1 transition-all">
+<p class="font-body-md text-sm text-on-surface mb-2 leading-snug line-through">Coffee with the team</p>
+<div class="flex justify-between items-center">
+<span class="material-symbols-outlined text-green-500 text-xs">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Gallery -->
+<div class="shrink-0 pt-2">
+<h3 class="font-headline-md text-lg font-bold flex items-center gap-2 mb-2 text-3xl text-2xl">
+<span class="material-symbols-outlined text-primary text-xl">grid_view</span>
+                            Recent Projects
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<!-- Project Card 1 -->
+<div class="bg-paper-white border-3 border-deep-ink rounded-xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex h-28">
+<div class="w-1/3 relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="A vibrant, high-contrast digital illustration of a futuristic workspace with neon accents, oversized stationery items, and a playful character peeking out from behind a computer monitor. The style is bold and illustrative with thick black outlines and a warm orange and yellow color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_HIbpWlD9jNj8oA1dnNLDQ-LChjztXCHjzLJCl8ljm-SXN1-x_ZuH_dZvtpr7_Miy8AXAb_js38grmMpEWi1uJJ3Rfu-sbkm1ewp3NhF7UY_3nrH7Feakf1yPZms9fdA9wD5K5Z5SyORG4JaNN0OpTADAxezbjoQCU2b8jDvFjn-XgYojxtY_loG1Z74yTABB0_VIce-bvO99QJJht2ztlpZ-KQFml3B8yQbi7Jkie2iK847ET2FO"/>
+<div class="absolute top-2 right-2 bg-paper-white border-2 border-deep-ink rounded px-1 py-0.5 font-bold text-[9px]">80%</div>
+</div>
+<div class="p-2.5 flex-1 flex flex-col justify-between min-w-0">
+<div>
+<h4 class="font-headline-md text-sm truncate mb-0.5">Neo-Synth UI Kit</h4>
+<p class="font-body-md text-xs text-on-surface-variant truncate">Library for modern enthusiasts.</p>
+</div>
+<div class="mt-auto">
+<div class="w-full bg-surface-container rounded-full h-1.5 border-1 border-deep-ink overflow-hidden mb-2">
+<div class="bg-secondary-container h-full candy-stripe" style="width: 80%"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full border-1 border-deep-ink bg-primary-fixed flex items-center justify-center font-bold text-[9px]">AM</div>
+<div class="w-6 h-6 rounded-full border-1 border-deep-ink bg-sunny-yellow flex items-center justify-center font-bold text-[9px]">BK</div>
+</div>
+<button class="bg-deep-ink text-white px-3 py-1 rounded-md font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">Open</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-paper-white border-3 border-deep-ink rounded-xl overflow-hidden hard-shadow hover:-translate-y-1 transition-all flex h-28">
+<div class="w-1/3 relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="A whimsical 3D render of a creative studio space, filled with oversized coffee mugs, floating lightbulbs, and colorful blueprints. The lighting is warm and golden, casting soft-edged but high-contrast shadows. The color scheme is dominated by rich oranges and bright yellows against a clean, off-white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAksyNE-8ssgt5a3k4mmPuI5AVc6OAo6A97sPLpjhbfvdy2J3ov0uoWMkQKhHCiiMCjj8l18z9IoXVxbQzXjkxKvzPqAVocMQcQH0MyyvmrPgCDCIfgalPMyKExUxyOh90-sxd5DWZxdTqmagb-YjqnbboN-I-F5ENAHOw60sERxVFaoUHMUP7akgoVxnLhaiQa-lw7dWkt1C1ysZeqqIH-7CPsltgTujLrX6KKkBY8gGpYoTFCRRMw"/>
+<div class="absolute top-2 right-2 bg-paper-white border-2 border-deep-ink rounded px-1 py-0.5 font-bold text-[9px]">35%</div>
+</div>
+<div class="p-2.5 flex-1 flex flex-col justify-between min-w-0">
+<div>
+<h4 class="font-headline-md text-sm truncate mb-0.5">Creative Campaign</h4>
+<p class="font-body-md text-xs text-on-surface-variant truncate">Summer 2024 materials.</p>
+</div>
+<div class="mt-auto">
+<div class="w-full bg-surface-container rounded-full h-1.5 border-1 border-deep-ink overflow-hidden mb-2">
+<div class="bg-primary-container h-full candy-stripe" style="width: 35%"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full border-1 border-deep-ink bg-secondary-fixed flex items-center justify-center font-bold text-[9px]">JS</div>
+</div>
+<button class="bg-deep-ink text-white px-3 py-1 rounded-md font-bold text-xs hover:scale-105 active:translate-y-0.5 transition-transform">Open</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Calendar & Meta (Bento Column) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-4 overflow-hidden h-full">
+<!-- Calendar Widget -->
+<div class="bg-paper-white border-3 border-deep-ink rounded-2xl p-4 hard-shadow flex flex-col min-h-0 hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-center mb-2 shrink-0">
+<h3 class="font-headline-md text-lg font-bold text-xl">October</h3>
+<div class="flex gap-1">
+<button class="w-6 h-6 border-2 border-deep-ink rounded flex items-center justify-center hover:bg-surface-container hover:scale-105 transition-all"><span class="material-symbols-outlined text-xs">chevron_left</span></button>
+<button class="w-6 h-6 border-2 border-deep-ink rounded flex items-center justify-center hover:bg-surface-container hover:scale-105 transition-all"><span class="material-symbols-outlined text-xs">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2 shrink-0">
+<span class="font-label-md text-xs text-soft-gray">S</span>
+<span class="font-label-md text-xs text-soft-gray">M</span>
+<span class="font-label-md text-xs text-soft-gray">T</span>
+<span class="font-label-md text-xs text-soft-gray">W</span>
+<span class="font-label-md text-xs text-soft-gray">T</span>
+<span class="font-label-md text-xs text-soft-gray">F</span>
+<span class="font-label-md text-xs text-soft-gray">S</span>
+<!-- Dummy Dates -->
+<span class="p-1 text-xs opacity-20">28</span>
+<span class="p-1 text-xs opacity-20">29</span>
+<span class="p-1 text-xs opacity-20">30</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">1</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">2</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">3</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">4</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">5</span>
+<span class="p-1 text-xs font-bold bg-sunny-yellow border-2 border-deep-ink rounded">6</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">7</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">8</span>
+<span class="p-1 text-xs font-bold border-2 border-deep-ink bg-primary-fixed rounded">9</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">10</span>
+<span class="p-1 text-xs font-bold border-2 border-transparent rounded hover:border-deep-ink cursor-pointer">11</span>
+</div>
+<div class="space-y-2 pt-2 border-t-2 border-surface-container overflow-y-auto custom-scrollbar flex-1">
+<div class="flex gap-2 items-center">
+<div class="w-1.5 h-8 bg-primary-container rounded-full"></div>
+<div>
+<p class="font-label-lg text-sm leading-tight">Design Sync</p>
+<p class="font-label-md text-[10px] text-soft-gray">10:00 AM - 11:30 AM</p>
+</div>
+</div>
+<div class="flex gap-2 items-center">
+<div class="w-1.5 h-8 bg-sunny-yellow rounded-full"></div>
+<div>
+<p class="font-label-lg text-sm leading-tight">Project Milestone</p>
+<p class="font-label-md text-[10px] text-soft-gray">02:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stickers/Status Section -->
+<div class="bg-secondary-fixed border-3 border-deep-ink rounded-2xl p-4 hard-shadow rotate-1 hover:rotate-0 hover:-translate-y-1 transition-transform shrink-0">
+<h3 class="font-headline-md text-sm font-bold mb-2">Current Mood</h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="bg-paper-white border-2 border-deep-ink px-2 py-0.5 rounded-full font-label-md text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-orange-500 text-xs" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                Focused
+                            </span>
+<span class="bg-paper-white border-2 border-deep-ink px-2 py-0.5 rounded-full font-label-md text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-blue-500 text-xs" style="font-variation-settings: 'FILL' 1;">headphones</span>
+                                Listening
+                            </span>
+<span class="bg-paper-white border-2 border-deep-ink px-2 py-0.5 rounded-full font-label-md text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-xs" style="font-variation-settings: 'FILL' 1;">coffee</span>
+                                Fueled
+                            </span>
+</div>
+</div>
+<!-- Mini Workbench Stats -->
+<div class="bg-paper-white border-3 border-deep-ink rounded-2xl p-4 hard-shadow shrink-0 flex-1 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<h3 class="font-label-md text-xs text-soft-gray uppercase mb-2 tracking-wider">Workbench Stats</h3>
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-3xl font-extrabold leading-none">42</span>
+<span class="font-label-md text-[10px] text-on-surface-variant">Hours this week</span>
+</div>
+<div class="grid grid-cols-7 h-10 gap-1 items-end">
+<div class="bg-primary-container border-1 border-deep-ink rounded-t-sm h-full w-full"></div>
+<div class="bg-primary-container border-1 border-deep-ink rounded-t-sm h-3/4 w-full"></div>
+<div class="bg-primary-container border-1 border-deep-ink rounded-t-sm h-1/2 w-full"></div>
+<div class="bg-primary-container border-1 border-deep-ink rounded-t-sm h-5/6 w-full"></div>
+<div class="bg-primary-container border-1 border-deep-ink rounded-t-sm h-2/3 w-full"></div>
+<div class="bg-sunny-yellow border-1 border-deep-ink rounded-t-sm h-full w-full"></div>
+<div class="bg-surface-container border-1 border-deep-ink rounded-t-sm h-1/4 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button class="absolute bottom-6 right-6 bg-sunny-yellow text-on-surface border-3 border-deep-ink w-12 h-12 rounded-xl flex items-center justify-center hard-shadow hover:-translate-y-1 hover:scale-105 active:translate-y-1 active:shadow-none transition-all z-50">
+<span class="material-symbols-outlined text-2xl font-black">add</span>
+</button>
+</main>
+<script>
+        // Simple micro-interaction for active states
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                if (el.classList.contains('hard-shadow')) {
+                    el.style.transform = 'translate(2px, 2px)';
+                    el.style.boxShadow = 'none';
+                }
+            });
+            el.addEventListener('mouseup', () => {
+                if (el.classList.contains('hard-shadow')) {
+                    el.style.transform = '';
+                    el.style.boxShadow = '';
+                }
+            });
+            el.addEventListener('mouseleave', () => {
+                if (el.classList.contains('hard-shadow')) {
+                    el.style.transform = '';
+                    el.style.boxShadow = '';
+                }
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-105');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-105');
+        });
+    </script>
+</body></html>
